@@ -91,7 +91,9 @@ export const TourGuideProvider = ({
     if (mounted) {
       if (steps[tourKey]) {
         if (
-          (Array.isArray(steps[tourKey]) && steps[tourKey].length > 0) ||
+          //(Array.isArray(steps[tourKey]) && steps[tourKey].length > 0) ||
+          (Array.isArray(steps[tourKey]) && (steps[tourKey] as IStep[]).length > 0) ||
+
           Object.entries(steps[tourKey]).length > 0
         ) {
           setCanStart((obj) => {
